@@ -1,0 +1,25 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog/1.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog/1.9
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-1.9.xsd">
+
+    <changeSet id="db.changelog.20241127110600-create-songs-table" author="Antonia Cucu">
+        <sql>
+            create table if not exists songs (
+            id serial primary key,
+            title varchar(100) not null,
+            artist varchar(100) not null,
+            album varchar(50),
+            genre varchar(20) not null,
+            release_date date not null
+            );
+        </sql>
+        <rollback>
+            <sql>
+                drop table if exists songs;
+            </sql>
+        </rollback>
+    </changeSet>
+
+</databaseChangeLog>

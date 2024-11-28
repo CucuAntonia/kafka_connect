@@ -1,0 +1,26 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog/1.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog/1.9
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-1.9.xsd">
+
+    <changeSet id="db.changelog.20241128114800-add-updated-at-column-to-songs-table" author="Antonia Cucu">
+        <sql>
+            alter table if exists "songs"
+            add column if not exists "updated_at" timestamp;
+            update "songs"
+            set "updated_at" = now()
+            where "updated_at" is null;
+
+            alter table "songs"
+            alter column "updated_at" set not null;
+        </sql>
+        <rollback>
+            <sql>
+                alter table "songs"
+                drop column if exists "updated_at";
+            </sql>
+        </rollback>
+    </changeSet>
+
+</databaseChangeLog>

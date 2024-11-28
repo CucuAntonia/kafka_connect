@@ -1,0 +1,12 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog/1.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog/1.9
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-1.9.xsd">
+
+    <include file="classpath:/db/changelog/db.changelog.20241127110600-create-songs-table.xml"/>
+    <include file="classpath:/db/changelog/db.changelog.20241127120700-add-duration-column-to-songs-table.xml"/>
+    <include file="classpath:/db/changelog/db.changelog.20241128114800-add-updated-at-column-to-songs-table.xml"/>
+    <include file="classpath:/db/changelog/db.changelog.20241128115500-update-updated-at-column-to-songs-table.xml"/>
+<!--    <include file="classpath:/db/changelog/db.changelog.20241127133900-insert-data-into-songs-table.xml"/>-->
+</databaseChangeLog>

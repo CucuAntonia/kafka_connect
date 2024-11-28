@@ -1,0 +1,35 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog/1.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog/1.9
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-1.9.xsd">
+
+    <changeSet id="db.changelog.20241127133900-insert-data-into-songs-table" author="Antonia Cucu">
+        <insert tableName="songs">
+            <column name="id" value="1"/>
+            <column name="title" value="Imagine"/>
+            <column name="artist" value="John Lennon"/>
+            <column name="album" value="Imagine"/>
+            <column name="genre" value="Rock"/>
+            <column name="release_date" value="1971-10-11"/>
+
+        </insert>
+        <insert tableName="songs">
+            <column name="id" value="2"/>
+            <column name="title" value="Bohemian Rhapsody"/>
+            <column name="artist" value="Queen"/>
+            <column name="album" value="A Night at the Opera"/>
+            <column name="genre" value="Rock"/>
+            <column name="release_date" value="1975-11-21"/>
+        </insert>
+        <insert tableName="songs">
+            <column name="id" value="3"/>
+            <column name="title" value="Billie Jean"/>
+            <column name="artist" value="Michael Jackson"/>
+            <column name="album" value="Thriller"/>
+            <column name="genre" value="Pop"/>
+            <column name="release_date" value="1983-01-02"/>
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>
